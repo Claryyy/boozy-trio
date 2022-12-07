@@ -1,0 +1,12 @@
+@import "./base.css";
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+.green {
+  text-decoration: none;
+  color: #c7ef00;
+}
