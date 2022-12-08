@@ -18,8 +18,9 @@ export default {
         if (key.includes("strIngredient")) {
           count++;
           return {
-            ingredient: this.randomCocktail[key],
-            measure: this.randomCocktail[`strMeasure${count}`]?.trim(),
+            ingredient: this.randomCocktail[key as keyof Drink],
+            measure:
+              this.randomCocktail[`strMeasure${count}` as keyof Drink]?.trim(),
           } as any;
         }
       });
@@ -35,6 +36,7 @@ export default {
       const response = await axios.get(
         "https://www.thecocktaildb.com/api/json/v1/1/random.php"
       );
+
       if (response.data) {
         this.randomCocktail = response.data?.drinks[0];
       }
@@ -79,7 +81,9 @@ export default {
         <div class="instructions">
           <h6>Instructions</h6>
           <span>
-            <p>{{ randomCocktail.strInstructions }}</p>
+            <p data-testid="instructions">
+              {{ randomCocktail.strInstructions }}
+            </p>
           </span>
         </div>
       </div>

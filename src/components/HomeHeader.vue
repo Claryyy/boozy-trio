@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
+    <h3 data-testid="subtitle">
       Discover 3 cocktails randomly selected for you and try them at home!
     </h3>
   </div>

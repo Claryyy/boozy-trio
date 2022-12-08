@@ -4,15 +4,15 @@ import CocktailItem from "./CocktailItem.vue";
 
 <template>
   <div class="container">
-    <CocktailItem class="item">
+    <CocktailItem class="item" data-testid="cocktail1">
       <template #heading></template>
     </CocktailItem>
 
-    <CocktailItem class="item">
+    <CocktailItem class="item" data-testid="cocktail2">
       <template #heading></template>
     </CocktailItem>
 
-    <CocktailItem class="item">
+    <CocktailItem class="item" data-testid="cocktail3">
       <template #heading></template>
     </CocktailItem>
   </div>
