@@ -51,7 +51,7 @@ export default {
 </script>
 
 <template :data="drinks">
-  <div class="item" :key="randomCocktail.idDrink">
+  <div class="card" :key="randomCocktail.idDrink">
     <div class="image">
       <img
         :src="randomCocktail.strDrinkThumb"
@@ -87,61 +87,27 @@ export default {
   </div>
 </template>
 
-<!-- <template :data="drinks">
-  <div class="item" :key="randomCocktail.idDrink">
-    <div class="image">
-      <img
-        :src="randomCocktail.strDrinkThumb"
-        :alt="`A picture of a cocktail called ${randomCocktail.strDrink}`"
-      />
-    </div>
-    <div class="details">
-      <h3>
-        <slot name="heading">{{ randomCocktail.strDrink }}</slot>
-      </h3>
-      <h4>
-        {{ randomCocktail.strAlcoholic }} | {{ randomCocktail.strCategory }} |
-        Served in a
-        {{ randomCocktail.strGlass }}
-      </h4>
-
-      <slot></slot>
-
-      <div id="drinkrecipe">
-        <div>
-          Ingredients
-
-          <li v-for="ingredient in ingredients">
-            {{ ingredient.ingredient }}
-            [{{ ingredient.measure }}]
-          </li>
-        </div>
-        <div>
-          Instructions
-          <span>
-            <p>{{ randomCocktail.strInstructions }}</p>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</template> -->
-
 <style scoped>
-.item {
+.card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
 }
 
-img {
+@media (min-width: 500px) and (max-width: 1023px) {
+  .card {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.details {
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
 }
 
 .recipe {
@@ -158,18 +124,20 @@ img {
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.2rem;
   color: var(--color-heading);
 }
 
 h4 {
   font-style: italic;
+  font-weight: 500;
   margin-bottom: 0.2rem;
 }
 
 h6 {
   font-size: 1rem;
-  color: #ffffff;
+  font-weight: 400;
+  color: #c7ef00;
 }
 </style>

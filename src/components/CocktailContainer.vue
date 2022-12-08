@@ -19,23 +19,15 @@ import CocktailItem from "./CocktailItem.vue";
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .container {
-    display: flex;
-    flex-direction: row;
-    place-items: center;
-    justify-content: space-around;
-    padding-top: 0.8rem;
-  }
-
-  .card {
-    flex: 1;
-  }
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-@media (max-width: 1023px) {
-  .item {
-    padding-bottom: 0.8rem;
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>
