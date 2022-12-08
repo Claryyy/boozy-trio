@@ -1,65 +1,39 @@
-# vade
+# Boozy trio
 
-This template should help get you started developing with Vue 3 in Vite.
+An app that will let you discover 3 cocktails randomly sleected and all the instructions to make it at home.
+Build using the data from free public API [TheCocktailDB](https://www.thecocktaildb.com/).
 
-## Recommended IDE Setup
+This app has been built using Vue3 + Vite, TypeScript and Vitest.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## To run this app via Docker (recommended)
 
-## Type Support for `.vue` Imports in TS
+First, make sure you have Docker installed and running
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+To build the Docker image of this app run:
+`docker build -t vade/dockerize-vuejs-app .`
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Finally, let’s run this app in a Docker container:
+`docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 vade/dockerize-vuejs-app`
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+You should be able to access the app on localhost:8080.
 
-## Customize configuration
+## Other commands
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Clone down the GitHub project and run the following commands `npm install` followed by `npm run dev` to run the code in dev mode.
 
-## Project Setup
+For the production build, run `npm run build`.
 
-```sh
-npm install
-```
+For Lint run `npm run lint`.
 
-### Compile and Hot-Reload for Development
+### Comments
 
-```sh
-npm run dev
-```
+This was my first time using Vue and it's been an interesting challenge to build this app in a few days.
+I created the app using the `npm init vue@latest` command to get setup with all the files needed.
 
-### Type-Check, Compile and Minify for Production
+I then took some time to read the Vue docs and wrap my head around the way components are written in Vue (scripts, style and template are in the same file). It makes for a folder structure that is much cleaner.
 
-```sh
-npm run build
-```
+I then took some time to refine the UI and styles for the different breakpoints.
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+For unit testing, I used Vitest as recommend by the Vue3 docs.
 
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+I then created a Dockerfile.
