@@ -106,6 +106,7 @@ export default {
 
 @media (min-width: 1024px) {
   .card {
+    display: block;
     grid-template-columns: 1fr;
   }
 }
