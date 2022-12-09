@@ -5,6 +5,10 @@ Build using the data from free public API [TheCocktailDB](https://www.thecocktai
 
 This app has been built using Vue3 + Vite, TypeScript and Vitest.
 
+## This app is hosted on Netlify
+
+You can access this app at the following URL: [https://wondrous-biscochitos-8eb655.netlify.app](https://wondrous-biscochitos-8eb655.netlify.app).
+
 ## To run this app via Docker (recommended)
 
 First, make sure you have Docker installed and running
