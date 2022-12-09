@@ -10,5 +10,5 @@
     "composite": true,
     "types": ["node"]
   },
-  "files": ["global.types.ts"]
+  "files": ["global.types.d.ts"]
 }
